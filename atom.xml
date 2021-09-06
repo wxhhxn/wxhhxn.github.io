@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ximena&#39;s story</title>
+  
+  
+  <link href="http://ximenananana.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://ximenananana.github.io/"/>
+  <updated>2021-09-06T10:10:50.284Z</updated>
+  <id>http://ximenananana.github.io/</id>
+  
+  <author>
+    <name>Ximena</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>my-first-blog</title>
+    <link href="http://ximenananana.github.io/2021/09/06/my-first-blog/"/>
+    <id>http://ximenananana.github.io/2021/09/06/my-first-blog/</id>
+    <published>2021-09-06T00:50:36.000Z</published>
+    <updated>2021-09-06T10:10:50.284Z</updated>
+    
+    <content type="html"><![CDATA[<p>启程 出发！！！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;启程 出发！！！&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
