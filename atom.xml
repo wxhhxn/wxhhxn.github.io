@@ -77,7 +77,7 @@
         
         
     <summary type="html">&lt;p&gt;先对这个矩阵进行预处理，将每一列分成n块，每一块以n为开头，这样子便于后续计算&lt;/p&gt;
-&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+&lt;pre class=&quot;line-numbers language-cpp&quot; data-language=&quot;cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span</summary>
         
       
     
