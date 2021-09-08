@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="gallery, Ximena&#39;s story">
+    <meta name="keywords" content="luoguP1174(CCPC), Ximena&#39;s story">
     <meta name="description" content="星光不问赶路人 时间不负有心人">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>gallery | Ximena&#39;s story</title>
+    <title>luoguP1174(CCPC) | Ximena&#39;s story</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -355,12 +355,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">gallery</h1>
+                    <h1 class="description center-align post-title">luoguP1174(CCPC)</h1>
                 </div>
             </div>
         </div>
@@ -481,6 +481,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/DP/" class="post-category">
+                                DP
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -488,7 +497,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-06
+                    2021-09-08
                 </div>
                 
 
@@ -497,7 +506,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    420
                 </div>
                 
 
@@ -517,7 +526,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>先对这个矩阵进行预处理，将每一列分成n块，每一块以n为开头，这样子便于后续计算</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">210</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-10</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> bug(x) cout&lt;&lt;#x&lt;&lt;<span class="meta-string">&quot;==&quot;</span>&lt;&lt;x&lt;&lt;endl;</span></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pp;</span><br><span class="line"><span class="keyword">int</span> fs[<span class="number">240</span>][<span class="number">240</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">bool</span> kind[<span class="number">240</span>][<span class="number">240</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> dy[<span class="number">240</span>][<span class="number">240</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> dn[<span class="number">240</span>][<span class="number">240</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> dpn[<span class="number">240</span>][<span class="number">240</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> dpy[<span class="number">240</span>][<span class="number">240</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m,k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>,&amp;n,&amp;m,&amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=m; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">char</span> x;</span><br><span class="line">            cin&gt;&gt;fs[i][j]&gt;&gt;x;</span><br><span class="line">            <span class="keyword">if</span>(x==<span class="string">&#x27;Y&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                kind[i][j] = <span class="number">1</span>;</span><br><span class="line">                <span class="comment">///该地方可以获得一个子弹</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;<span class="comment">///每一列</span></span><br><span class="line">		<span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">			<span class="keyword">if</span> (kind[i][j] == <span class="number">1</span>) dy[j][tot] += fs[i][j];<span class="comment">///不消耗子弹，可以放到同一类上面</span></span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				tot++;</span><br><span class="line">				dn[j][tot] = dy[j][tot - <span class="number">1</span>] + fs[i][j];<span class="comment">///dn表示此处为消耗子弹的地方，而且这一排拢共消耗tot个子弹得到的分数</span></span><br><span class="line">				dy[j][tot] = dn[j][tot];<span class="comment">///dy表示此处为不消耗子弹的地方</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= k; j++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l &lt;= <span class="built_in">min</span>(j, n); l++) &#123;</span><br><span class="line">				dpy[i][j] = <span class="built_in">max</span>(dpy[i][j], dpy[i - <span class="number">1</span>][j - l] + dy[i][l]);</span><br><span class="line">				<span class="keyword">if</span> (l != <span class="number">0</span>) dpn[i][j] = <span class="built_in">max</span>(dpn[i][j], dpy[i - <span class="number">1</span>][j - l] + dn[i][l]);</span><br><span class="line">				<span class="keyword">if</span> (j != l) dpn[i][j] = <span class="built_in">max</span>(dpn[i][j], dpn[i - <span class="number">1</span>][j - l] + dy[i][l]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, dpn[m][k]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
                 
             </div>
             <hr/>
@@ -543,7 +554,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://whxhxn.github.io/gallery/index.html">http://whxhxn.github.io/gallery/index.html</a>
+                    <a href="http://whxhxn.github.io/2021/09/08/luogup1174-ccpc/">http://whxhxn.github.io/2021/09/08/luogup1174-ccpc/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -746,7 +757,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Mon Sep 06 2021 17:18:24 GMT+0800',
+    id: 'Wed Sep 08 2021 16:09:46 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -771,9 +782,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://whxhxn.github.io/gallery/index.html';
-        this.page.identifier = '/gallery/index.html';
-        this.page.title = 'gallery';
+        this.page.url = 'http://whxhxn.github.io/2021/09/08/luogup1174-ccpc/';
+        this.page.identifier = '/2021/09/08/luogup1174-ccpc/';
+        this.page.title = 'luoguP1174(CCPC)';
     };
     let disqus_shortname = '';
 
@@ -803,18 +814,17 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/gallery/index.html">
+                <a href="/2021/09/08/cf5c-longest-regular-bracket-sequence/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="gallery">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="CF5C Longest Regular Bracket Sequence">
                         
-                        <span class="card-title">gallery</span>
+                        <span class="card-title">CF5C Longest Regular Bracket Sequence</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -824,18 +834,21 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Ximena
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/DP/" class="post-category">
+                                    DP
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -843,16 +856,16 @@ gitment.render('gitment-content');
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/gallery/index.html">
+                <a href="/2021/09/06/my-first-blog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="gallery">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="my-first-blog">
                         
-                        <span class="card-title">gallery</span>
+                        <span class="card-title">my-first-blog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -873,7 +886,6 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
